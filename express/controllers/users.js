@@ -21,6 +21,7 @@ const createDefault = () => {
 
 const createUser = user => {
   // insert user from POST request into db
+  return UsersModel.create(user);
 };
 
 const updateUser = (name, updates) => {
@@ -30,6 +31,7 @@ const updateUser = (name, updates) => {
 
 const deleteUser = name => {
   // use name as the query
+  return UsersModel.deleteOne({ name });
 };
 
 module.exports = {

@@ -20,7 +20,7 @@ router.post("/default", (request, response) => {
 });
 
 router.post("/", (request, response) => {
-  UsersController.createUser(/* request body */).then(() =>
+  UsersController.createUser(request.body).then(() =>
     response.send("User created")
   );
 });
@@ -32,7 +32,7 @@ router.put("/:name", (request, response) => {
 });
 
 router.delete("/:name", (request, response) => {
-  UsersController.deleteUser(/* name param */).then(() =>
+  UsersController.deleteUser(request.params.name).then(() =>
     response.send("User deleted")
   );
 });
